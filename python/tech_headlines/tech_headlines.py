@@ -17,7 +17,6 @@ class Headlines():
     def get_headlines(self):
         articles = self.soup.find_all('article', { 'class' : 'story' })
         articles = articles[:self.limit_lines]
-        processed = {}
 
         for index, article in enumerate(articles):
             headline = article.find('h3', { 'class' : 'story-title'}).text.strip()
