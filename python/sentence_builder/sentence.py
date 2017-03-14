@@ -3,11 +3,11 @@ import random
 
 class SentenceBuilder():
     def __init__(self):
-        self.pronouns    = ['I', 'me', 'he', 'she', 'you', 'it', 'that', 'they', 'each', 'few', 'many', 'someone', 'everybody']
+        self.pronouns    = ['I', 'he', 'she', 'you', 'it', 'that', 'they', 'each', 'few', 'many', 'someone', 'everybody']
         self.modal_verbs = ['must', 'shall', 'will', 'should', 'would', 'can', 'could', 'may','might']
         self.verbs       = ['run', 'jump', 'break', 'ram', 'destroy', 'color']
         self.determiner  = ['the', 'a', 'an', 'this', 'that', 'these', 'those', 'my', 'your', 'his', 'her', 'our', 'their', 'much', 'many', 'most', 'some', 'any', 'enough', 'one', 'all', 'both', 'half', 'either', 'neither', 'each', 'every', 'other', 'another', 'such', 'what', 'rather', 'quite']
-        self.nouns       = ['dog', 'pup', 'kitter', 'kite', 'shoe', 'shoes']
+        self.nouns       = ['dog', 'pup', 'kitter', 'kite', 'shoe', 'shoes', 'phone', 'keyboard', 'mouse']
 
         pronoun    = random.choice(self.pronouns)
         modal_verb = random.choice(self.modal_verbs)
