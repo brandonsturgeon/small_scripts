@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import subprocess
+import operator
 
 
 class CheckLinting():
     def __init__(self):
-        self.ESLINT_COMMAND = "eslint ."
+        self.ESLINT_COMMAND = "eslint src/"
 
         self.lint_errors = {}
 
@@ -16,7 +17,8 @@ class CheckLinting():
         output = self.getLintingOutput()
         self.parseLintingOutput(output)
 
-        for k, v in self.lint_errors.iteritems():
+        sorted_errors = sorted(self.lint_errors.items(), key=operator.itemgetter(1), reverse=True)
+        for k, v in sorted_errors:
             print("{}//{}".format(k, v))
 
     def formatError(self, error):
