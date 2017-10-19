@@ -293,11 +293,17 @@ const emojis = [
 ];
 const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
-let iter = 0;
-
 for (letter of alphabet) {
   $("a,p,h1,h2,h3,h4,strong,li,span,div").text(function () {
+    let text = $(this).text();
     let emoji = emojis[Math.floor(Math.random()*emojis.length)]
-    return $(this).text().replace(letter, emoji); 
+
+    const re = new RegExp(letter, 'g');
+    const randChance = Math.random();
+
+    if (randChance > 0.5) {
+        text = text.replace(re, emoji);
+    }
+    return text;
   });
-}
+} 
