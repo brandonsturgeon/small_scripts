@@ -18,8 +18,8 @@ const numberMap = {
 const number = "669"
 
 const generatePatternForDigit = d => `(${numberMap[d].join("|")})`
-
-const generatePatternForNumber = number => new RegExp(`^${number.split("").map(d => generatePatternForDigit(d)).join("")}$`, "gmi")
+const generatePatternForDigits = digits => digits.split("").map(d => generatePatternForDigit(d)).join("")
+const generatePatternForNumber = number => new RegExp(`^${generatePatternForDigits(number)}$`, "gmi")
 
 console.log(`Phone number: ${number}`)
 const pattern = generatePatternForNumber(number)
