@@ -48,8 +48,6 @@ Phone number: 669
 */
 
 const otherWay = number => {
-
-
   let stripped = number.replace("1", "")
   stripped = stripped.replace("0", "")
 
@@ -73,13 +71,13 @@ const otherWay = number => {
     }
   };
 
-
   const dictionaryWords = possibleWords.map(word => dictionary[word])
   const onlyGoodWords = dictionaryWords.filter(w => w)
 
   return onlyGoodWords
 }
 
+/* Benchmarking */
 const benchmark = (runs, func, runArg) => {
 
   const startTime = new Date().getTime()
