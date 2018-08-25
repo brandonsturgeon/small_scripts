@@ -69,7 +69,7 @@ const otherWay = number => {
 
       possibleWords = newWords
     }
-  };
+  }
 
   const dictionaryWords = possibleWords.map(word => dictionary[word])
   const onlyGoodWords = dictionaryWords.filter(w => w)
